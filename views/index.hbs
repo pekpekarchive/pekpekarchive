@@ -1,0 +1,52 @@
+<div class="navbar">
+	<h1>Picbook</h1>
+</div>
+<div class="main-content">
+	<div class="post-stream">
+		<div class="panel-title"> Submitted Pictures</div>
+		<div class="posts-panel">
+			{{#each pics as |pic|}}
+			  	<div class="post">
+			  		<div class="post-main-content">
+				  		<div class="pic-title"> {{pic.title}} </div>
+				  		<img class="pic" src="/images/{{pic.filename}}" />
+				  		<div class="pic-footer" title="{{pic.datetime.text}}"> {{pic.datetime.relative}} </div>
+				  	</div>
+				  	<div class="post-comments">
+				  		{{#each pic.comments as |comment|}}
+				  			<div class="comment">
+		    					<div class="comment-user">
+			  						<img class="user-icon" src="/images/user.jpg" />
+				    				<div class="user-name"> {{comment.username}} </div>
+		    					</div>
+		    					<div class="comment-content">{{comment.comment}}</div>
+						    	<div class="comment-datetime" title="{{comment.datetime.text}}">
+						    		{{comment.datetime.relative}}
+						    	</div>
+				    		</div>
+				  		{{/each}}
+				  		<div class="new-comment">
+			    			<form method="POST" action="/comment/{{pic._id}}" class="pure-form comment-form">
+		    					<div class="comment-form-top">
+			    					<input type="text" name="username" placeholder="Username" required>
+									<button type="submit" class="pure-button pure-button-primary submit-comment-btn">Submit Comment</button>
+								</div>
+								<textarea name="comment" class="input-comment-text" rows="2" placeholder="Comment" required></textarea>
+							</form>
+			    		</div>
+				  	</div>
+				</div>
+			  	<hr/>
+			{{/each}}
+		</div>
+	</div>
+	<div class="new-post">
+		<div class="panel-title"> Upload New Picture</div>
+		<form method="POST" class="pure-form pure-form-stacked new-post-form" encType="multipart/form-data">
+	    <fieldset>
+			<input type="text" name="title" placeholder="Title" class="text-input" required>
+			<input type="file" name="pic" required>
+			<button type="submit" class="pure-button pure-button-primary input-button">Submit</button>
+		</form>
+	</div>
+</div>

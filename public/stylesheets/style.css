@@ -1,0 +1,143 @@
+.navbar {
+	background-color: gray;
+	position:absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding-left: 30px;
+	border-bottom: 1px solid black;
+	color: white;
+	height: 70px;
+}
+
+.main-content {
+    display: -webkit-flex;
+    display: flex;
+	position:absolute;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.new-post {
+    -webkit-flex: 1;
+    flex: 1;
+    border-left: 1px solid gray;
+}
+
+.new-post-form {
+    margin: 20px 0 0 25px;
+}
+
+.panel-title {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+    padding: 10px 0 10px;
+    margin: 0 20px 0 20px;
+}
+
+.text-input {
+    width: 90%;
+}
+
+.post-stream {
+    -webkit-flex: 3;
+    flex: 3;
+}
+
+.post {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.post-main-content {
+    -webkit-flex: 1;
+    flex: 1;
+    border-right: 1px solid gray;
+    margin: 10px 0 10px 20px;
+    padding-right: 20px;
+}
+
+.post-comments {
+    -webkit-flex: 1;
+    flex: 1;
+    font-size: 10pt;
+    overflow-y:scroll;
+    max-height: 300px;
+}
+
+.pic-title {
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+
+.pic-footer {
+    color: gray;
+    font-style: italic;
+    font-size: 8pt;
+    text-align: right;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.new-comment {
+    margin: 20px 50px 0 20px;
+}
+
+.comment-form-top {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.submit-comment-btn {
+    margin: 3px 0 3px 5px;
+}
+
+.input-comment-text {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.comment {
+    border-bottom: 1pt solid gray;
+    padding-bottom: 5px;
+    margin-right: 50px;
+}
+
+.comment-user {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.user-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 9pt;
+    vertical-align: middle;
+}
+
+.comment-content {
+    margin-left: 70px;
+    white-space: pre-line;
+}
+
+.comment-datetime {
+    color: gray;
+    font-style: italic;
+    font-size: 8pt;
+    margin: 5px 0 0 50px;
+}
