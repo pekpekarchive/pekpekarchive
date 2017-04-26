@@ -7,7 +7,7 @@
 .main-content {
     display: -webkit-flex;
     display: flex;
-    overflow-y:scroll;
+    overflow-y: auto;
 	position:absolute;
     top: 70px;
     left: 0px;
@@ -56,7 +56,7 @@
     -webkit-flex: 1;
     flex: 1;
     font-size: 10pt;
-    overflow-y:scroll;
+    overflow-y: auto;
     max-height: 400px;
     margin-top: 20px;
 }
