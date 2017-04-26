@@ -1,41 +1,33 @@
-.navbar {
-	background-color: gray;
-	position:absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    padding-left: 30px;
-	border-bottom: 1px solid black;
-	color: white;
-	height: 70px;
+
+
+#upload-button {
+    font-weight: bold;
 }
 
 .main-content {
     display: -webkit-flex;
     display: flex;
+    overflow-y:scroll;
 	position:absolute;
-    top: 80px;
+    top: 70px;
     left: 0px;
     right: 0px;
     bottom: 0px;
 }
 
-.new-post {
+.space {
     -webkit-flex: 1;
     flex: 1;
-    border-left: 1px solid gray;
 }
 
 .new-post-form {
-    margin: 20px 0 0 25px;
+    margin-left: 50px;
 }
 
 .panel-title {
     text-align: center;
     font-weight: bold;
-    border-bottom: 1px solid gray;
-    padding: 10px 0 10px;
-    margin: 0 20px 0 20px;
+    padding-bottom: 10px;
 }
 
 .text-input {
@@ -43,8 +35,8 @@
 }
 
 .post-stream {
-    -webkit-flex: 3;
-    flex: 3;
+    -webkit-flex: 7;
+    flex: 7;
 }
 
 .post {
@@ -55,7 +47,7 @@
 .post-main-content {
     -webkit-flex: 1;
     flex: 1;
-    border-right: 1px solid gray;
+    border-right: 1px solid #ddd;
     margin: 10px 0 10px 20px;
     padding-right: 20px;
 }
@@ -65,13 +57,13 @@
     flex: 1;
     font-size: 10pt;
     overflow-y:scroll;
-    max-height: 300px;
+    max-height: 400px;
+    margin-top: 20px;
 }
 
 .pic-title {
     font-weight: bold;
     text-align: center;
-    border-bottom: 1px solid gray;
     padding-bottom: 10px;
 }
 
@@ -80,10 +72,11 @@
     font-style: italic;
     font-size: 8pt;
     text-align: right;
+    padding-top: 3px;
 }
 
 img {
-    width: 100%;
+    width: 98%;
     height: auto;
 }
 
@@ -91,12 +84,21 @@ img {
     margin: 20px 50px 0 20px;
 }
 
+.comment-form {}
+
 .comment-form-top {
     display: -webkit-flex;
     display: flex;
 }
 
+.input-comment-username {
+    -webkit-flex: 2;
+    flex: 2;
+}
+
 .submit-comment-btn {
+    -webkit-flex: 1;
+    flex: 1;
     margin: 3px 0 3px 5px;
 }
 
@@ -106,7 +108,7 @@ img {
 }
 
 .comment {
-    border-bottom: 1pt solid gray;
+    border-bottom: 1pt solid #eee;
     padding-bottom: 5px;
     margin-right: 50px;
 }
@@ -120,8 +122,8 @@ img {
 }
 
 .user-icon {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
 .user-name {
@@ -133,11 +135,18 @@ img {
 .comment-content {
     margin-left: 70px;
     white-space: pre-line;
+    word-wrap: break-word;
 }
 
 .comment-datetime {
     color: gray;
     font-style: italic;
     font-size: 8pt;
-    margin: 5px 0 0 50px;
+    margin: 5px 0 0 40px;
+}
+
+.be-the-first {
+    margin-left: 20px;
+    font-weight: bold;
+    border-bottom: 1pt solid #eee;
 }

@@ -4,8 +4,44 @@
     <title>Picbook</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 	<link rel="stylesheet" href="/stylesheets/pure-min.css">
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
+
   </head>
   <body>
+  	<nav class="navbar navbar-default">
+		<div class="container">
+		    <div class="navbar-header">
+		        <a class="navbar-brand" href="/">
+		            Picbook
+		        </a>
+		    </div>
+		    <ul class="nav navbar-nav navbar-right">
+		       	<li><a id="upload-button" href="#" data-toggle="modal" data-target="#myModal"> Upload New Picture </a></li>
+		    </ul>
+		    <div id="myModal" class="modal fade" role="dialog">
+		  		<div class="modal-dialog">
+		    		<div class="modal-content">
+		      			<div class="modal-header">
+        					<button type="button" class="close" data-dismiss="modal">&times;</button>
+		        			<h4 class="modal-title">Upload New Picture</h4>
+		      			</div>
+		      			<div class="modal-body">
+							<form method="POST" class="pure-form pure-form-stacked new-post-form" encType="multipart/form-data">
+								<input type="text" name="title" placeholder="Title" class="text-input" required>
+								<input type="file" name="pic" required>
+								<button type="submit" class="pure-button pure-button-primary input-button">Submit</button>
+							</form>
+		     			</div>
+		   			</div>
+		  		</div>
+			</div>
+		</div>
+	</nav>
+    
     {{{body}}}
+	
+	<script src="/javascripts/jquery.min.js"></script>
+	<script src="/javascripts/bootstrap.min.js"></script>
   </body>
 </html>
