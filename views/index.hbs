@@ -9,7 +9,9 @@
 						<div class="post">
 					  		<div class="post-main-content">
 						  		<div class="pic-title"> {{pic.title}} </div>
-						  		<img class="pic img-rounded" src="{{pic.link}}" />
+						  		<a href="{{pic.link}}">
+						  			<img class="pic img-rounded" src="{{pic.link}}" />
+						  		</a>
 						  		<div class="pic-footer" title="{{pic.datetime.text}}"> {{pic.datetime.relative}} </div>
 						  	</div>
 						  	<div class="post-comments">
@@ -33,7 +35,7 @@
 					    			<form method="POST" action="/comment/{{pic._id}}" class="pure-form comment-form">
 				    					<div class="comment-form-top">
 					    					<input class="input-comment-username" type="text" name="username" placeholder="Username" required>
-											<button type="submit" class="pure-button pure-button-primary submit-comment-btn">Submit Comment</button>
+											<button type="submit" class="pure-button pure-button-primary submit-comment-btn">Submit</button>
 										</div>
 										<textarea name="comment" class="input-comment-text" rows="2" placeholder="Comment" required></textarea>
 									</form>
