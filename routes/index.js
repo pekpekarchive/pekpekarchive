@@ -6,12 +6,14 @@ const url = process.env.MONGO_URI || require('../configs').MONGO_URI;
 const collection = 'picbook';
 const moment = require('moment');
 const uuidV4 = require('uuid/v4');
+const imgur = require('imgur');
 
 const filePath = './public/images/';
 
-let formatData = function (picData, filename){
+let formatData = function (picData, filename, fileLink){
 	picData.filename = filename;
 	picData.datetime = {num: Date.now(), text: moment().format('MMMM Do YYYY, h:mm:ss a')};
+	picData.link = fileLink;
 	return picData;
 };
 
@@ -52,12 +54,20 @@ MongoClient.connect(url, (err, db) => {
 		    if (err) return res.status(500).send(err);
 		});
 
-	  	let picData = formatData(req.body, filename);
+		imgur.setClientId(process.env.IMGUR_CLIENT_ID || require('../configs').IMGUR_CLIENT_ID);
 
-		db.collection(collection).save(picData, (err, result) => {
-	   	 	if (err) return console.log(err);
-	    	res.redirect('/');
-	  	});
+		imgur.uploadFile(filePath + filename)
+		    .then(function (json) {
+		    	let picData = formatData(req.body, filename, json.data.link);
+
+		    	db.collection(collection).save(picData, (err, result) => {
+			   	 if (err) return console.log(err);
+			    	res.redirect('/');
+			  	});
+		    })
+		    .catch(function (err) {
+		        console.error(err.message);
+		    });
 	});
 
 	router.post('/comment/:id', function(req, res, next) {
